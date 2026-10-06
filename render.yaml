@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: notification-service
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: notification-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: keyvalue
+          name: notification-redis
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      # Mismo valor en TODOS los microservicios (autentica la entrega de eventos).
+      - key: INTERNAL_TOKEN
+        sync: false
+      - key: DEBUG
+        value: "0"
+      - key: RUN_WORKER_IN_WEB
+        value: "1"
+      # Los servicios gratis tardan ~1 minuto en despertar.
+      - key: SYNC_TIMEOUT
+        value: "60"
+      # URL pública del microservicio de Asegurados (ej: https://policyholder-service-xxxx.onrender.com)
+      - key: POLICYHOLDER_SERVICE_URL
+        sync: false
+      # URL pública del microservicio de Pólizas (ej: https://policy-service-xxxx.onrender.com)
+      - key: POLICY_SERVICE_URL
+        sync: false
+
+  - type: keyvalue
+    name: notification-redis
+    plan: free
+    ipAllowList: []
+
+databases:
+  - name: notification-db
+    databaseName: notification_db
+    user: notification_user
+    plan: free
