@@ -1,0 +1,876 @@
+[
+{
+  "model": "notificaciones.plantilla",
+  "pk": "0b03a3b5-0ee8-4f62-b8ca-7270bef4638b",
+  "fields": {
+    "codigo": "claim_opened",
+    "canal": "email",
+    "cuerpo_plantilla": "Hola {nombre}, recibimos el reporte de tu siniestro {id_siniestro}. Un perito será asignado y te mantendremos informado del avance."
+  }
+},
+{
+  "model": "notificaciones.plantilla",
+  "pk": "0e32748b-a76f-4e0f-9dbe-06748fbd4e37",
+  "fields": {
+    "codigo": "claim_rejected",
+    "canal": "email",
+    "cuerpo_plantilla": "Hola {nombre}, tu siniestro {id_siniestro} fue revisado y no fue aprobado. Puedes comunicarte con tu agente para más información."
+  }
+},
+{
+  "model": "notificaciones.plantilla",
+  "pk": "13339608-8b65-453e-b105-dea1f57494a5",
+  "fields": {
+    "codigo": "policy_cancelled",
+    "canal": "email",
+    "cuerpo_plantilla": "Hola {nombre}, tu póliza {id_poliza} fue cancelada."
+  }
+},
+{
+  "model": "notificaciones.plantilla",
+  "pk": "1b2927ed-6a3c-434f-87d5-3587e605daa6",
+  "fields": {
+    "codigo": "vencimiento_poliza",
+    "canal": "sms",
+    "cuerpo_plantilla": "InsureFlow: {nombre}, tu póliza {id_poliza} vence el {expiry_date}. Renuévala para mantener tu cobertura."
+  }
+},
+{
+  "model": "notificaciones.plantilla",
+  "pk": "35189c17-54c6-443e-a775-aee375c3bf55",
+  "fields": {
+    "codigo": "documentation_requested",
+    "canal": "email",
+    "cuerpo_plantilla": "Hola {nombre}, para continuar con tu siniestro {id_siniestro} necesitamos documentación adicional. Por favor cárgala en el portal de asegurados."
+  }
+},
+{
+  "model": "notificaciones.plantilla",
+  "pk": "64ac6637-1b02-437f-b9b0-92032518b057",
+  "fields": {
+    "codigo": "policy_issued",
+    "canal": "email",
+    "cuerpo_plantilla": "Hola {nombre}, tu póliza de {product_type} {id_poliza} fue emitida. Vigencia: {effective_date} a {expiry_date}. Te recordaremos antes del vencimiento."
+  }
+},
+{
+  "model": "notificaciones.plantilla",
+  "pk": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+  "fields": {
+    "codigo": "payment_completed_prima",
+    "canal": "email",
+    "cuerpo_plantilla": "Hola {nombre}, recibimos el pago de la prima de tu póliza {id_poliza} por ${amount}. ¡Gracias!"
+  }
+},
+{
+  "model": "notificaciones.plantilla",
+  "pk": "8cfd3b66-b130-485b-84b4-18ab81748f7b",
+  "fields": {
+    "codigo": "payment_completed_indemnizacion",
+    "canal": "email",
+    "cuerpo_plantilla": "Hola {nombre}, el pago de la indemnización de tu siniestro {id_siniestro} por ${amount} fue realizado."
+  }
+},
+{
+  "model": "notificaciones.plantilla",
+  "pk": "aefce339-fa46-4931-b419-964e22204d09",
+  "fields": {
+    "codigo": "payment_failed",
+    "canal": "email",
+    "cuerpo_plantilla": "Hola {nombre}, tuvimos un inconveniente procesando el pago de {tipo}. Nuestro equipo lo está revisando y te contactaremos pronto."
+  }
+},
+{
+  "model": "notificaciones.plantilla",
+  "pk": "dfc88e8e-4826-4ff7-8943-03542847a34f",
+  "fields": {
+    "codigo": "policy_renewed",
+    "canal": "email",
+    "cuerpo_plantilla": "Hola {nombre}, tu póliza {id_poliza} fue renovada. Nueva fecha de vencimiento: {expiry_date}."
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "0099ca9b-c5cf-41c5-83c2-2b8f37c0df17",
+  "fields": {
+    "id_asegurado": "47a8895d-881a-41ee-ba2d-7d48b5cbbc6c",
+    "id_siniestro": "7f647c80-746c-4cff-9af7-4a994b6729de",
+    "plantilla": "8cfd3b66-b130-485b-84b4-18ab81748f7b",
+    "canal": "email",
+    "destinatario": "valentina.rojas564@example.com",
+    "mensaje": "Hola Valentina, el pago de la indemnización de tu siniestro 7f647c80-746c-4cff-9af7-4a994b6729de por $4200000.00 fue realizado.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:19:07.676Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "019a00c0-a5e1-4d33-b280-e0ef84891a10",
+  "fields": {
+    "id_asegurado": "e670e357-4430-489b-a2a7-e709e96da39c",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "laura.react@example.com",
+    "mensaje": "Hola Laura, tu póliza de auto a33fc5a2-336a-483f-bde5-c482a1618e19 fue emitida. Vigencia: 2026-11-10 a 2027-11-10. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T22:29:17.833Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "024b0b6d-fa3c-4b30-b21a-f1de89c40814",
+  "fields": {
+    "id_asegurado": "53392dff-d46c-4b66-8e48-1e83aa9b4d69",
+    "id_siniestro": null,
+    "plantilla": "13339608-8b65-453e-b105-dea1f57494a5",
+    "canal": "email",
+    "destinatario": "cliente910619@example.com",
+    "mensaje": "Hola Laura, tu póliza f74496cc-9959-4b36-a6b8-92e9d969ce3a fue cancelada.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T20:01:41.533Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "049700fb-8b13-49fa-8f1d-d9023bb7de54",
+  "fields": {
+    "id_asegurado": "47a8895d-881a-41ee-ba2d-7d48b5cbbc6c",
+    "id_siniestro": "7f647c80-746c-4cff-9af7-4a994b6729de",
+    "plantilla": "0b03a3b5-0ee8-4f62-b8ca-7270bef4638b",
+    "canal": "email",
+    "destinatario": "valentina.rojas564@example.com",
+    "mensaje": "Hola Valentina, recibimos el reporte de tu siniestro 7f647c80-746c-4cff-9af7-4a994b6729de. Un perito será asignado y te mantendremos informado del avance.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:18:46.666Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "06009c6e-ee2c-4b4f-a32a-70a690f0706e",
+  "fields": {
+    "id_asegurado": "47a8895d-881a-41ee-ba2d-7d48b5cbbc6c",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "valentina.rojas564@example.com",
+    "mensaje": "Hola Valentina, recibimos el pago de la prima de tu póliza e545ffdc-9cd1-40a9-b0c8-fdbce4cf28d2 por $210000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:18:27.549Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "0e3b5fb6-c144-4cb6-afa2-19ecd947483b",
+  "fields": {
+    "id_asegurado": "53392dff-d46c-4b66-8e48-1e83aa9b4d69",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "cliente910619@example.com",
+    "mensaje": "Hola Laura, recibimos el pago de la prima de tu póliza f74496cc-9959-4b36-a6b8-92e9d969ce3a por $58000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:59:35.397Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "12937b24-b9f1-4d17-8f76-53d96275db37",
+  "fields": {
+    "id_asegurado": "699b755e-1fef-4ab6-96f7-de580bf18cba",
+    "id_siniestro": "a64199f0-434f-4a63-ad7b-dd513b4233e7",
+    "plantilla": "8cfd3b66-b130-485b-84b4-18ab81748f7b",
+    "canal": "email",
+    "destinatario": "valentina.rojas510@example.com",
+    "mensaje": "Hola Valentina, el pago de la indemnización de tu siniestro a64199f0-434f-4a63-ad7b-dd513b4233e7 por $4200000.00 fue realizado.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:17:19.532Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "14e53100-5959-4275-bd93-64f0b12a064c",
+  "fields": {
+    "id_asegurado": "5f547a3c-bd54-4d05-82b6-b55068d0cc58",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "cliente6882bf@example.com",
+    "mensaje": "Hola Laura, tu póliza de vida b0ab0ed2-6075-48ba-820e-431042ea558c fue emitida. Vigencia: 2026-11-10 a 2027-11-10. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:56:57.147Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "1924d38c-77ca-495d-b516-c0ac33b23109",
+  "fields": {
+    "id_asegurado": "f981402e-0777-42b1-9aae-d86aa132f2ed",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "cliente677379@example.com",
+    "mensaje": "Hola Laura, tu póliza de auto adc099d7-c6ff-48fd-a72f-c15d61374784 fue emitida. Vigencia: 2026-11-17 a 2027-11-17. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T16:57:44.113Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "21c41108-57cb-42ac-9dcd-44e399d5a56c",
+  "fields": {
+    "id_asegurado": "5f547a3c-bd54-4d05-82b6-b55068d0cc58",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "cliente6882bf@example.com",
+    "mensaje": "Hola Laura, tu póliza de auto a5ae718c-79c3-4cec-a7b5-4fa5f03a7742 fue emitida. Vigencia: 2026-11-10 a 2027-11-10. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:56:57.044Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "24b42ad3-1247-4ef8-a0e7-c48dced64bf4",
+  "fields": {
+    "id_asegurado": "7ba35437-8689-422e-8082-867664cd65be",
+    "id_siniestro": "4a1977af-5bc5-408d-8f8e-272e58f39292",
+    "plantilla": "0b03a3b5-0ee8-4f62-b8ca-7270bef4638b",
+    "canal": "email",
+    "destinatario": "ana3363d5@example.com",
+    "mensaje": "Hola Ana, recibimos el reporte de tu siniestro 4a1977af-5bc5-408d-8f8e-272e58f39292. Un perito será asignado y te mantendremos informado del avance.",
+    "status": "enviado",
+    "sent_at": "2026-10-06T16:53:58.305Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "24b68b22-04a2-41a4-8138-41a213758430",
+  "fields": {
+    "id_asegurado": "47a8895d-881a-41ee-ba2d-7d48b5cbbc6c",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "valentina.rojas564@example.com",
+    "mensaje": "Hola Valentina, tu póliza de hogar 42edbd8c-91b9-4410-9b89-7fb4d6219b08 fue emitida. Vigencia: 2026-11-17 a 2027-11-17. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:18:24.767Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "2ab7abe6-e6db-4d2f-9fdb-dfdb9a7477b6",
+  "fields": {
+    "id_asegurado": "53392dff-d46c-4b66-8e48-1e83aa9b4d69",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "cliente910619@example.com",
+    "mensaje": "Hola Laura, recibimos el pago de la prima de tu póliza 37255788-8e19-4072-a686-6bc117107d5e por $210000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:59:35.151Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "3563a036-1137-455a-ad9b-362b290f8382",
+  "fields": {
+    "id_asegurado": "e670e357-4430-489b-a2a7-e709e96da39c",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "laura.react@example.com",
+    "mensaje": "Hola Laura, recibimos el pago de la prima de tu póliza a33fc5a2-336a-483f-bde5-c482a1618e19 por $210000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-10T22:29:27.936Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "3ccaf779-fa3e-48a9-a412-771e2895ab76",
+  "fields": {
+    "id_asegurado": "5f547a3c-bd54-4d05-82b6-b55068d0cc58",
+    "id_siniestro": "ece2df0e-cd37-43c1-93d3-d7655bf77eef",
+    "plantilla": "8cfd3b66-b130-485b-84b4-18ab81748f7b",
+    "canal": "email",
+    "destinatario": "cliente6882bf@example.com",
+    "mensaje": "Hola Laura, el pago de la indemnización de tu siniestro ece2df0e-cd37-43c1-93d3-d7655bf77eef por $3500000.00 fue realizado.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:56:58.191Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "4a124108-95b3-42e3-89b4-ab8569a39f73",
+  "fields": {
+    "id_asegurado": "f981402e-0777-42b1-9aae-d86aa132f2ed",
+    "id_siniestro": "2baff5aa-9343-41e1-acb2-cc6fb6ff00a9",
+    "plantilla": "8cfd3b66-b130-485b-84b4-18ab81748f7b",
+    "canal": "email",
+    "destinatario": "cliente677379@example.com",
+    "mensaje": "Hola Laura, el pago de la indemnización de tu siniestro 2baff5aa-9343-41e1-acb2-cc6fb6ff00a9 por $3500000.00 fue realizado.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T16:57:45.295Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "4b1bb5e4-e57b-4575-8d0e-1d20b21a7aeb",
+  "fields": {
+    "id_asegurado": "61edfb02-7f84-465b-8df1-977b50077f06",
+    "id_siniestro": "d5e56d78-cd6f-4242-9c43-96c67c65b85f",
+    "plantilla": "0b03a3b5-0ee8-4f62-b8ca-7270bef4638b",
+    "canal": "email",
+    "destinatario": "cliented02082@example.com",
+    "mensaje": "Hola Laura, recibimos el reporte de tu siniestro d5e56d78-cd6f-4242-9c43-96c67c65b85f. Un perito será asignado y te mantendremos informado del avance.",
+    "status": "enviado",
+    "sent_at": "2026-10-13T18:54:24.150Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "4ec932be-9140-4bc6-95ca-0da60b0efdba",
+  "fields": {
+    "id_asegurado": "53392dff-d46c-4b66-8e48-1e83aa9b4d69",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "cliente910619@example.com",
+    "mensaje": "Hola Laura, recibimos el pago de la prima de tu póliza 313fe9b3-ad9a-4b38-afa9-2e812a649b5f por $73000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:59:35.270Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "51e3102b-d513-4847-a19a-e85560aa3e9f",
+  "fields": {
+    "id_asegurado": "5f547a3c-bd54-4d05-82b6-b55068d0cc58",
+    "id_siniestro": "ece2df0e-cd37-43c1-93d3-d7655bf77eef",
+    "plantilla": "0b03a3b5-0ee8-4f62-b8ca-7270bef4638b",
+    "canal": "email",
+    "destinatario": "cliente6882bf@example.com",
+    "mensaje": "Hola Laura, recibimos el reporte de tu siniestro ece2df0e-cd37-43c1-93d3-d7655bf77eef. Un perito será asignado y te mantendremos informado del avance.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:56:57.942Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "523a100d-ffc6-4290-a4cf-01ab5f7e1366",
+  "fields": {
+    "id_asegurado": "61edfb02-7f84-465b-8df1-977b50077f06",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "cliented02082@example.com",
+    "mensaje": "Hola Laura, recibimos el pago de la prima de tu póliza b675317d-5e7d-47ff-aba7-87c43d62be61 por $100000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-10-13T18:54:23.841Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "52dd8a30-ce7c-4804-b9bc-ff39488ad9ff",
+  "fields": {
+    "id_asegurado": "699b755e-1fef-4ab6-96f7-de580bf18cba",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "valentina.rojas510@example.com",
+    "mensaje": "Hola Valentina, recibimos el pago de la prima de tu póliza 5f08372e-b05a-45a4-88e7-2dd2e52da833 por $73000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:16:40.962Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "5c6986be-bac5-4a2d-bf87-185344e2b5d7",
+  "fields": {
+    "id_asegurado": "53392dff-d46c-4b66-8e48-1e83aa9b4d69",
+    "id_siniestro": "df64f2b9-88de-41c3-a181-c6f430740f93",
+    "plantilla": "8cfd3b66-b130-485b-84b4-18ab81748f7b",
+    "canal": "email",
+    "destinatario": "cliente910619@example.com",
+    "mensaje": "Hola Laura, el pago de la indemnización de tu siniestro df64f2b9-88de-41c3-a181-c6f430740f93 por $3500000.00 fue realizado.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T20:01:37.963Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "5e8b1fea-d75f-4c13-a657-720bb737eb00",
+  "fields": {
+    "id_asegurado": "61edfb02-7f84-465b-8df1-977b50077f06",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "cliented02082@example.com",
+    "mensaje": "Hola Laura, tu póliza de auto b675317d-5e7d-47ff-aba7-87c43d62be61 fue emitida. Vigencia: 2026-10-13 a 2027-10-13. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-10-13T18:54:23.308Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "638b1bf9-2d83-4ad0-b82a-060ccc8abf38",
+  "fields": {
+    "id_asegurado": "5f547a3c-bd54-4d05-82b6-b55068d0cc58",
+    "id_siniestro": null,
+    "plantilla": "13339608-8b65-453e-b105-dea1f57494a5",
+    "canal": "email",
+    "destinatario": "cliente6882bf@example.com",
+    "mensaje": "Hola Laura, tu póliza b0ab0ed2-6075-48ba-820e-431042ea558c fue cancelada.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:57:01.704Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "7b27718c-dabc-4102-a3a1-64771e8c46db",
+  "fields": {
+    "id_asegurado": "5f547a3c-bd54-4d05-82b6-b55068d0cc58",
+    "id_siniestro": null,
+    "plantilla": "dfc88e8e-4826-4ff7-8943-03542847a34f",
+    "canal": "email",
+    "destinatario": "cliente6882bf@example.com",
+    "mensaje": "Hola Laura, tu póliza 3a832b0b-2447-4424-ba12-0810df889ef0 fue renovada. Nueva fecha de vencimiento: 2028-11-10.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:57:01.660Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "7de090f3-2da5-4eae-a648-eb86886f41c0",
+  "fields": {
+    "id_asegurado": "699b755e-1fef-4ab6-96f7-de580bf18cba",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "valentina.rojas510@example.com",
+    "mensaje": "Hola Valentina, tu póliza de auto bec27b8c-598c-4989-8060-5ac15e14a215 fue emitida. Vigencia: 2026-11-17 a 2027-11-17. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:16:42.037Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "855d5869-ab30-4545-a551-44b9c9a53327",
+  "fields": {
+    "id_asegurado": "f981402e-0777-42b1-9aae-d86aa132f2ed",
+    "id_siniestro": null,
+    "plantilla": "13339608-8b65-453e-b105-dea1f57494a5",
+    "canal": "email",
+    "destinatario": "cliente677379@example.com",
+    "mensaje": "Hola Laura, tu póliza ab868ded-7b3d-4234-b01c-4b27cd002e4c fue cancelada.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T16:57:48.768Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "87482534-1f9e-4ece-9826-f4d841930e5a",
+  "fields": {
+    "id_asegurado": "f981402e-0777-42b1-9aae-d86aa132f2ed",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "cliente677379@example.com",
+    "mensaje": "Hola Laura, recibimos el pago de la prima de tu póliza ab868ded-7b3d-4234-b01c-4b27cd002e4c por $58000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-17T16:57:44.831Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "89e96bd9-aa57-4473-a852-50e5b03bca33",
+  "fields": {
+    "id_asegurado": "f981402e-0777-42b1-9aae-d86aa132f2ed",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "cliente677379@example.com",
+    "mensaje": "Hola Laura, recibimos el pago de la prima de tu póliza adc099d7-c6ff-48fd-a72f-c15d61374784 por $210000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-17T16:57:44.638Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "927e38a0-8ae6-47aa-b0cd-f787be4a2db9",
+  "fields": {
+    "id_asegurado": "f981402e-0777-42b1-9aae-d86aa132f2ed",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "cliente677379@example.com",
+    "mensaje": "Hola Laura, tu póliza de vida ab868ded-7b3d-4234-b01c-4b27cd002e4c fue emitida. Vigencia: 2026-11-17 a 2027-11-17. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T16:57:44.232Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "9371f7a8-754e-48ac-a0ab-8bd533f3782e",
+  "fields": {
+    "id_asegurado": "5f547a3c-bd54-4d05-82b6-b55068d0cc58",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "cliente6882bf@example.com",
+    "mensaje": "Hola Laura, recibimos el pago de la prima de tu póliza b0ab0ed2-6075-48ba-820e-431042ea558c por $58000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:56:57.753Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "9dab3b63-2e3a-4aa0-af11-6b69bc404a06",
+  "fields": {
+    "id_asegurado": "f981402e-0777-42b1-9aae-d86aa132f2ed",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "cliente677379@example.com",
+    "mensaje": "Hola Laura, tu póliza de hogar 67471254-1f71-4418-9627-5395d1369eb5 fue emitida. Vigencia: 2026-11-17 a 2027-11-17. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T16:57:44.181Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "a1a02019-dff7-48f0-a3c1-1b572cb32754",
+  "fields": {
+    "id_asegurado": "699b755e-1fef-4ab6-96f7-de580bf18cba",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "valentina.rojas510@example.com",
+    "mensaje": "Hola Valentina, tu póliza de hogar 5f08372e-b05a-45a4-88e7-2dd2e52da833 fue emitida. Vigencia: 2026-11-17 a 2027-11-17. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:16:39.329Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "a6d07a80-2275-4c9a-8dc9-6bf0de1af958",
+  "fields": {
+    "id_asegurado": "7ba35437-8689-422e-8082-867664cd65be",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "ana3363d5@example.com",
+    "mensaje": "Hola Ana, recibimos el pago de la prima de tu póliza 38d4dbc7-243f-466f-bbe1-a5d866eab3e5 por $1200000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-10-06T16:53:58.184Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "ad60a23c-9872-4000-9eca-426ecbe2f808",
+  "fields": {
+    "id_asegurado": "47a8895d-881a-41ee-ba2d-7d48b5cbbc6c",
+    "id_siniestro": "64c5ebfb-0cf6-466b-a318-9a8e06deab82",
+    "plantilla": "0b03a3b5-0ee8-4f62-b8ca-7270bef4638b",
+    "canal": "email",
+    "destinatario": "valentina.rojas564@example.com",
+    "mensaje": "Hola Valentina, recibimos el reporte de tu siniestro 64c5ebfb-0cf6-466b-a318-9a8e06deab82. Un perito será asignado y te mantendremos informado del avance.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:18:27.578Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "af8b4fa3-0724-4bd2-bbef-52c1f8488f9e",
+  "fields": {
+    "id_asegurado": "53392dff-d46c-4b66-8e48-1e83aa9b4d69",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "cliente910619@example.com",
+    "mensaje": "Hola Laura, tu póliza de vida f74496cc-9959-4b36-a6b8-92e9d969ce3a fue emitida. Vigencia: 2026-11-10 a 2027-11-10. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:59:34.650Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "b170dd0b-ccb6-4902-9837-a3c1d7701c4d",
+  "fields": {
+    "id_asegurado": "699b755e-1fef-4ab6-96f7-de580bf18cba",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "valentina.rojas510@example.com",
+    "mensaje": "Hola Valentina, recibimos el pago de la prima de tu póliza bec27b8c-598c-4989-8060-5ac15e14a215 por $210000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:16:42.112Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "b56e981a-61f6-4169-80f4-1c066963b7e5",
+  "fields": {
+    "id_asegurado": "5f547a3c-bd54-4d05-82b6-b55068d0cc58",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "cliente6882bf@example.com",
+    "mensaje": "Hola Laura, tu póliza de hogar 3a832b0b-2447-4424-ba12-0810df889ef0 fue emitida. Vigencia: 2026-11-10 a 2027-11-10. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:56:57.110Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "b79fffc2-a213-4fb4-b655-e405f8ec6d88",
+  "fields": {
+    "id_asegurado": "47a8895d-881a-41ee-ba2d-7d48b5cbbc6c",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "valentina.rojas564@example.com",
+    "mensaje": "Hola Valentina, recibimos el pago de la prima de tu póliza edd8512f-db4e-4df2-94ee-438b1c9a2166 por $73000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:20:44.290Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "bdef0d41-eeab-4d22-85d9-ffcef6461a33",
+  "fields": {
+    "id_asegurado": "47a8895d-881a-41ee-ba2d-7d48b5cbbc6c",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "valentina.rojas564@example.com",
+    "mensaje": "Hola Valentina, recibimos el pago de la prima de tu póliza 42edbd8c-91b9-4410-9b89-7fb4d6219b08 por $73000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:18:26.357Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "bdf4fe10-d15e-4cb1-9157-520690582513",
+  "fields": {
+    "id_asegurado": "47a8895d-881a-41ee-ba2d-7d48b5cbbc6c",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "valentina.rojas564@example.com",
+    "mensaje": "Hola Valentina, tu póliza de hogar edd8512f-db4e-4df2-94ee-438b1c9a2166 fue emitida. Vigencia: 2026-11-17 a 2027-11-17. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:20:43.016Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "c1690cfa-ef3c-4b51-a68a-0e9d5c245772",
+  "fields": {
+    "id_asegurado": "61edfb02-7f84-465b-8df1-977b50077f06",
+    "id_siniestro": "d5e56d78-cd6f-4242-9c43-96c67c65b85f",
+    "plantilla": "8cfd3b66-b130-485b-84b4-18ab81748f7b",
+    "canal": "email",
+    "destinatario": "cliented02082@example.com",
+    "mensaje": "Hola Laura, el pago de la indemnización de tu siniestro d5e56d78-cd6f-4242-9c43-96c67c65b85f por $3500000.00 fue realizado.",
+    "status": "enviado",
+    "sent_at": "2026-10-13T18:54:27.169Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "ca1fd816-8bc3-4fc5-a36d-a238abc9cadf",
+  "fields": {
+    "id_asegurado": "f981402e-0777-42b1-9aae-d86aa132f2ed",
+    "id_siniestro": "2baff5aa-9343-41e1-acb2-cc6fb6ff00a9",
+    "plantilla": "0b03a3b5-0ee8-4f62-b8ca-7270bef4638b",
+    "canal": "email",
+    "destinatario": "cliente677379@example.com",
+    "mensaje": "Hola Laura, recibimos el reporte de tu siniestro 2baff5aa-9343-41e1-acb2-cc6fb6ff00a9. Un perito será asignado y te mantendremos informado del avance.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T16:57:45.061Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "cad0364f-4a97-47d9-8ac4-cbebeed694d3",
+  "fields": {
+    "id_asegurado": "699b755e-1fef-4ab6-96f7-de580bf18cba",
+    "id_siniestro": "4a5360c4-bc2d-4310-8368-3ea0a92be3ab",
+    "plantilla": "0b03a3b5-0ee8-4f62-b8ca-7270bef4638b",
+    "canal": "email",
+    "destinatario": "valentina.rojas510@example.com",
+    "mensaje": "Hola Valentina, recibimos el reporte de tu siniestro 4a5360c4-bc2d-4310-8368-3ea0a92be3ab. Un perito será asignado y te mantendremos informado del avance.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:16:42.171Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "cfa28622-0388-4051-9436-6e3f553aea95",
+  "fields": {
+    "id_asegurado": "f981402e-0777-42b1-9aae-d86aa132f2ed",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "cliente677379@example.com",
+    "mensaje": "Hola Laura, recibimos el pago de la prima de tu póliza 67471254-1f71-4418-9627-5395d1369eb5 por $73000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-17T16:57:44.738Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "d7c9d3ff-a18c-4528-bc2c-7e66ef0a4554",
+  "fields": {
+    "id_asegurado": "7ba35437-8689-422e-8082-867664cd65be",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "ana3363d5@example.com",
+    "mensaje": "Hola Ana, tu póliza de auto 38d4dbc7-243f-466f-bbe1-a5d866eab3e5 fue emitida. Vigencia: 2026-06-08 a 2027-06-08. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-10-06T16:53:57.780Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "da586d96-7a4c-4b04-a74e-84c0167105e8",
+  "fields": {
+    "id_asegurado": "5f547a3c-bd54-4d05-82b6-b55068d0cc58",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "cliente6882bf@example.com",
+    "mensaje": "Hola Laura, recibimos el pago de la prima de tu póliza 3a832b0b-2447-4424-ba12-0810df889ef0 por $73000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:56:57.666Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "e98ab18e-5470-4a76-95d1-8f04dee80969",
+  "fields": {
+    "id_asegurado": "53392dff-d46c-4b66-8e48-1e83aa9b4d69",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "cliente910619@example.com",
+    "mensaje": "Hola Laura, tu póliza de auto 37255788-8e19-4072-a686-6bc117107d5e fue emitida. Vigencia: 2026-11-10 a 2027-11-10. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:59:34.532Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "ee05ec87-8942-4f42-b963-13ff96dedba1",
+  "fields": {
+    "id_asegurado": "47a8895d-881a-41ee-ba2d-7d48b5cbbc6c",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "valentina.rojas564@example.com",
+    "mensaje": "Hola Valentina, tu póliza de auto e545ffdc-9cd1-40a9-b0c8-fdbce4cf28d2 fue emitida. Vigencia: 2026-11-17 a 2027-11-17. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:18:27.481Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "ef27a285-b674-4675-aee8-1e3cd7bb8085",
+  "fields": {
+    "id_asegurado": "f981402e-0777-42b1-9aae-d86aa132f2ed",
+    "id_siniestro": null,
+    "plantilla": "dfc88e8e-4826-4ff7-8943-03542847a34f",
+    "canal": "email",
+    "destinatario": "cliente677379@example.com",
+    "mensaje": "Hola Laura, tu póliza 67471254-1f71-4418-9627-5395d1369eb5 fue renovada. Nueva fecha de vencimiento: 2028-11-17.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T16:57:48.731Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "ef4a1036-2060-452d-a914-a9318d15603f",
+  "fields": {
+    "id_asegurado": "699b755e-1fef-4ab6-96f7-de580bf18cba",
+    "id_siniestro": "a64199f0-434f-4a63-ad7b-dd513b4233e7",
+    "plantilla": "0b03a3b5-0ee8-4f62-b8ca-7270bef4638b",
+    "canal": "email",
+    "destinatario": "valentina.rojas510@example.com",
+    "mensaje": "Hola Valentina, recibimos el reporte de tu siniestro a64199f0-434f-4a63-ad7b-dd513b4233e7. Un perito será asignado y te mantendremos informado del avance.",
+    "status": "enviado",
+    "sent_at": "2026-11-17T17:16:58.598Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "f0f606ce-ecfc-4f2b-842d-f15c8f651494",
+  "fields": {
+    "id_asegurado": "53392dff-d46c-4b66-8e48-1e83aa9b4d69",
+    "id_siniestro": "df64f2b9-88de-41c3-a181-c6f430740f93",
+    "plantilla": "0b03a3b5-0ee8-4f62-b8ca-7270bef4638b",
+    "canal": "email",
+    "destinatario": "cliente910619@example.com",
+    "mensaje": "Hola Laura, recibimos el reporte de tu siniestro df64f2b9-88de-41c3-a181-c6f430740f93. Un perito será asignado y te mantendremos informado del avance.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:59:35.671Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "f6ac4b1c-ece5-4e4d-ac5a-3ffd709ed47a",
+  "fields": {
+    "id_asegurado": "5f547a3c-bd54-4d05-82b6-b55068d0cc58",
+    "id_siniestro": null,
+    "plantilla": "845fc1e5-1692-4424-b19f-c5e605f8da95",
+    "canal": "email",
+    "destinatario": "cliente6882bf@example.com",
+    "mensaje": "Hola Laura, recibimos el pago de la prima de tu póliza a5ae718c-79c3-4cec-a7b5-4fa5f03a7742 por $210000.00. ¡Gracias!",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:56:57.570Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "f8807e42-589a-43c5-b29b-56f0bb925bce",
+  "fields": {
+    "id_asegurado": "53392dff-d46c-4b66-8e48-1e83aa9b4d69",
+    "id_siniestro": null,
+    "plantilla": "dfc88e8e-4826-4ff7-8943-03542847a34f",
+    "canal": "email",
+    "destinatario": "cliente910619@example.com",
+    "mensaje": "Hola Laura, tu póliza 313fe9b3-ad9a-4b38-afa9-2e812a649b5f fue renovada. Nueva fecha de vencimiento: 2028-11-10.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T20:01:41.491Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "fb055f7d-b444-4754-9e42-62abdecedb53",
+  "fields": {
+    "id_asegurado": "53392dff-d46c-4b66-8e48-1e83aa9b4d69",
+    "id_siniestro": null,
+    "plantilla": "64ac6637-1b02-437f-b9b0-92032518b057",
+    "canal": "email",
+    "destinatario": "cliente910619@example.com",
+    "mensaje": "Hola Laura, tu póliza de hogar 313fe9b3-ad9a-4b38-afa9-2e812a649b5f fue emitida. Vigencia: 2026-11-10 a 2027-11-10. Te recordaremos antes del vencimiento.",
+    "status": "enviado",
+    "sent_at": "2026-11-10T19:59:34.597Z"
+  }
+},
+{
+  "model": "notificaciones.notificacion",
+  "pk": "fcfa9eab-29b5-4868-b2c4-6d73a3a0e3f2",
+  "fields": {
+    "id_asegurado": "7ba35437-8689-422e-8082-867664cd65be",
+    "id_siniestro": "4a1977af-5bc5-408d-8f8e-272e58f39292",
+    "plantilla": "8cfd3b66-b130-485b-84b4-18ab81748f7b",
+    "canal": "email",
+    "destinatario": "ana3363d5@example.com",
+    "mensaje": "Hola Ana, el pago de la indemnización de tu siniestro 4a1977af-5bc5-408d-8f8e-272e58f39292 por $4500000.00 fue realizado.",
+    "status": "enviado",
+    "sent_at": "2026-10-06T16:54:01.365Z"
+  }
+}
+]

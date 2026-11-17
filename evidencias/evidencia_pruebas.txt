@@ -1,0 +1,43 @@
+EVIDENCIA DE PRUEBAS · Microservicio_Notificaciones_Notification_Service
+Fecha: 2026-11-17 12:45
+Comando: USE_SQLITE=1 CELERY_EAGER=1 coverage run manage.py test -v 2
+
+Pruebas exigidas (Momento 3): tests/test_unitarias.py (2 unitarias con mocks) y tests/test_integracion.py (1 de integración).
+
+=== Resultado de cada prueba ===
+test_claim_opened_notifica_con_plantilla (notificaciones.tests.NotificacionesTests.test_claim_opened_notifica_con_plantilla) ... ok
+test_envio_manual (notificaciones.tests.NotificacionesTests.test_envio_manual) ... ok
+test_pago_de_prima_busca_asegurado_en_polizas (notificaciones.tests.NotificacionesTests.test_pago_de_prima_busca_asegurado_en_polizas) ... ok
+test_plantillas_iniciales (notificaciones.tests.NotificacionesTests.test_plantillas_iniciales) ... ok
+test_enviar_y_consultar_historial_del_asegurado (tests.test_integracion.NotificacionesIntegracionTests.test_enviar_y_consultar_historial_del_asegurado) ... ok
+test_si_el_canal_falla_queda_como_fallida (tests.test_unitarias.NotificacionesUnitTests.test_si_el_canal_falla_queda_como_fallida) ... ok
+test_usa_plantilla_y_datos_del_asegurado (tests.test_unitarias.NotificacionesUnitTests.test_usa_plantilla_y_datos_del_asegurado) ... ok
+
+Ran 8 tests in 0.051s
+OK
+
+=== Reporte de cobertura (coverage.py) ===
+Name                            Stmts   Miss  Cover   Missing
+-------------------------------------------------------------
+comun\celery_app.py                 9      0   100%
+comun\clientes.py                  66     47    29%   31-36, 39-42, 45-47, 50-54, 61, 70-101
+comun\errores.py                   14     14     0%   2-31
+comun\eventos.py                   40     23    42%   51-69, 75-93
+comun\logs.py                      14      0   100%
+comun\metricas.py                  23      1    96%   44
+comun\models.py                     8      0   100%
+comun\servicio.py                   2      0   100%
+comun\views.py                     42     13    69%   20-27, 34, 45-46, 49-50, 56
+notificaciones\apps.py              4      0   100%
+notificaciones\canales.py          18      5    72%   23-26, 31
+notificaciones\handlers.py         28      8    71%   17-18, 28, 32, 36, 40, 44, 52
+notificaciones\models.py           33      1    97%   26
+notificaciones\serializers.py      23      1    96%   41
+notificaciones\servicios.py        36      2    94%   25-26
+notificaciones\urls.py              3      0   100%
+notificaciones\views.py            26      4    85%   39-42
+notification_service\urls.py        5      0   100%
+-------------------------------------------------------------
+TOTAL                             394    119    70%
+
+3 empty files skipped.
